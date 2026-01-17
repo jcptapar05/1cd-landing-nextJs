@@ -1,10 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import React, { useEffect, useRef, useState } from "react";
 const HomeSlider = () => {
@@ -32,15 +28,16 @@ const HomeSlider = () => {
   return (
     <div className="relative w-screen h-screen">
       <video
-        className={`top-0 left-0 w-full h-full object-cover ${
-          scrollOffset <= 1000 && "-z-10 fixed "
-        }`}
+        className={`top-0 left-0 w-full h-full object-cover ${scrollOffset <= 1000 && "-z-10 fixed "}`}
         autoPlay
         loop
         muted
         playsInline
       >
-        <source src="./homepage/welcome-video.mp4" type="video/mp4" />
+        <source
+          src="./homepage/welcome-video.mp4"
+          type="video/mp4"
+        />
         Your browser does not support the video tag.
       </video>
       <div
@@ -68,7 +65,7 @@ const HomeSlider = () => {
             <CarouselItem className="">
               <div className="text-center">
                 <p className="uppercase text-white text-[36px] md:text-[58px]  m-0 p-0 leading-[0.8] ">
-                  TURN YOUR IDEAS
+                  TURN YOUR IDEASss
                 </p>
                 <p className="uppercase text-white text-[36px] md:text-[58px] m-0 p-0 leading-none">
                   INTO <span className="font-black">VIRTUAL</span> REALITY
@@ -89,7 +86,7 @@ const HomeSlider = () => {
         </Carousel>
         <a href="#requestDemo">
           <Button className="uppercase text-[12px] md:text-[16px] font-extrabold py-8 px-6 rounded-full bg-[#0E2D63]">
-            Request a demo
+            Request a demoss
           </Button>
         </a>
       </div>
