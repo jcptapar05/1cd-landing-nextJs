@@ -65,7 +65,7 @@ const HomeSlider = () => {
             <CarouselItem className="">
               <div className="text-center">
                 <p className="uppercase text-white text-[36px] md:text-[58px]  m-0 p-0 leading-[0.8] ">
-                  TURN YOUR IDEASss
+                  TURN YOUR IDEAS
                 </p>
                 <p className="uppercase text-white text-[36px] md:text-[58px] m-0 p-0 leading-none">
                   INTO <span className="font-black">VIRTUAL</span> REALITY
@@ -86,7 +86,7 @@ const HomeSlider = () => {
         </Carousel>
         <a href="#requestDemo">
           <Button className="uppercase text-[12px] md:text-[16px] font-extrabold py-8 px-6 rounded-full bg-[#0E2D63]">
-            Request a demoss
+            Request a demo
           </Button>
         </a>
       </div>
