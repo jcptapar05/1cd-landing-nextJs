@@ -18,7 +18,7 @@ import Image from "next/image";
 
 const components: { title: string; href: string }[] = [
   {
-    title: "Virtual Showroomsssss",
+    title: "Virtual Showrooms",
     href: "/virtual_showroom",
   },
   {
@@ -66,11 +66,12 @@ export function MainNav() {
               legacyBehavior
               passHref
             >
-              <Image
+              {/* <Image
                 src="/1clickdesign-logo-black.svg"
                 alt=""
                 className="cursor-pointer"
-              />
+              /> */}
+              Logo Here
             </Link>
           </NavigationMenuItem>
         </NavigationMenuList>
@@ -84,7 +85,7 @@ export function MainNav() {
               passHref
             >
               <NavigationMenuLink className={` text-[14px] font-extrabold tracking-wide uppercase`}>
-                Servicessssss
+                Services
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>

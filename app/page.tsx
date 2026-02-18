@@ -12,22 +12,22 @@ import VMC from "@/components/_pages/homepage/VMC";
 import OurServicesNew from "@/components/_pages/homepage/OurServicesNew";
 
 export default function Home() {
- return (
-  <>
-   <HomeSlider></HomeSlider>
-   <ProductsWeWorkedWith></ProductsWeWorkedWith>
-   <OurServicesNew></OurServicesNew>
-   <VideoConferencing></VideoConferencing>
-   <SliderProduct
-    title="OUR SERVICES"
-    description="Producing high-quality 3D models and renderings."
-    videoUrl="./homepage/homepage-ourservices.mp4"
-   ></SliderProduct>
-   <ThreeDModels></ThreeDModels>
-   <OurVirtualExperiences></OurVirtualExperiences>
-   <Showrooms></Showrooms>
-   {/* <PartnersSlider></PartnersSlider> */}
-   <VMC></VMC>
-  </>
- );
+  return (
+    <>
+      <HomeSlider></HomeSlider>
+      <ProductsWeWorkedWith></ProductsWeWorkedWith>
+      <OurServicesNew></OurServicesNew>
+      <VideoConferencing></VideoConferencing>
+      <SliderProduct
+        title="OUR SERVICES"
+        description="Producing high-quality 3D models and renderings."
+        videoUrl="./homepage/homepage-ourservices.mp4"
+      ></SliderProduct>
+      <ThreeDModels></ThreeDModels>
+      <OurVirtualExperiences></OurVirtualExperiences>
+      {/* <Showrooms></Showrooms> */}
+      {/* <PartnersSlider></PartnersSlider> */}
+      <VMC></VMC>
+    </>
+  );
 }
