@@ -38,10 +38,39 @@ jobs:
           port: ${{ secrets.VPS_PORT || 22 }}
           script: |
             set -e
+
             cd ~/projects/1cd-landing-nextJs
-            git pull origin main
+
+            echo "== Where am I? =="
+            pwd
+
+            echo "== Commit before =="
+            git log -1 --oneline || true
+
+            echo "== Force update to origin/main =="
+            git fetch origin
+            git reset --hard origin/main
+            git clean -fd
+
+            echo "== Commit after =="
+            git log -1 --oneline
+
+            echo "== Install deps =="
             npm ci
+
+            echo "== Clean build output =="
+            rm -rf .next
+
+            echo "== Build =="
             export RESEND_API_KEY="${{ secrets.RESEND_API_KEY }}"
             npm run build
-            pm2 restart nextjs-app || pm2 start npm --name "nextjs-app" -- start
+
+            echo "== Restart app (update env) =="
+            pm2 restart nextjs-app --update-env || pm2 start npm --name "nextjs-app" -- start
             pm2 save
+
+            echo "== PM2 status =="
+            pm2 list
+
+            echo "== Deploy finished at =="
+            date
