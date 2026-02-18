@@ -3,11 +3,7 @@
 import React from "react";
 
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 
 import Autoplay from "embla-carousel-autoplay";
 
@@ -58,7 +54,7 @@ const ProductsWeWorkedWith = () => {
     <div className="py-7 bg-white">
       <div className="text-center mb-4">
         <p className="font-medium text-[14px] md:text-[24px] uppercase text-[#0E2D63]">
-          PRODUCTS WE WORKED WITH
+          PRODUCTS WE WORKED WITH LA LA LA
         </p>
       </div>
       <Carousel
