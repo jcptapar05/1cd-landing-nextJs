@@ -39,20 +39,26 @@ jobs:
           script: |
             set -e
 
+            # Load nvm (non-interactive SSH doesn't load it automatically)
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+            # Use Node 20 for consistency with CI (install if missing)
+            nvm install 20
+            nvm use 20
+
+            echo "== Versions =="
+            node -v
+            npm -v
+
             cd ~/projects/1cd-landing-nextJs
-
-            echo "== Where am I? =="
-            pwd
-
-            echo "== Commit before =="
-            git log -1 --oneline || true
 
             echo "== Force update to origin/main =="
             git fetch origin
             git reset --hard origin/main
             git clean -fd
 
-            echo "== Commit after =="
+            echo "== Commit deployed =="
             git log -1 --oneline
 
             echo "== Install deps =="
@@ -71,6 +77,3 @@ jobs:
 
             echo "== PM2 status =="
             pm2 list
-
-            echo "== Deploy finished at =="
-            date
