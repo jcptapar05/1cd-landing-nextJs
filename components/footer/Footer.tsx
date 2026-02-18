@@ -2,6 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { FaFacebook, FaGoogle, FaSkype, FaTwitter } from "react-icons/fa6";
+import Image from "next/image";
 export function Footer() {
   const sections = [
     {
@@ -37,9 +38,7 @@ export function Footer() {
             key={index}
             className="w-full flex flex-col items-center md:items-start"
           >
-            <p className="font-extrabold text-[12px] md:text-[16px] mb-4">
-              {section.title}
-            </p>
+            <p className="font-extrabold text-[12px] md:text-[16px] mb-4">{section.title}</p>
             <div className="flex flex-col gap-1 items-center md:items-start">
               {section.links.map((link, linkIndex) => (
                 <Link
@@ -54,9 +53,7 @@ export function Footer() {
           </div>
         ))}
         <div className="flex flex-col items-center md:items-start">
-          <p className="font-extrabold text-[12px] md:text-[16px] mb-4">
-            CONTACT US
-          </p>
+          <p className="font-extrabold text-[12px] md:text-[16px] mb-4">CONTACT US</p>
           <div className="flex flex-col items-center  md:items-start gap-2">
             <a
               href="tel:+1 310-859-8200"
@@ -77,13 +74,22 @@ export function Footer() {
               >
                 <FaFacebook className="hover:text-[#FFA800] cursor-pointer " />
               </a>
-              <a href="#" target="_blank">
+              <a
+                href="#"
+                target="_blank"
+              >
                 <FaGoogle className="hover:text-[#FFA800] cursor-pointer" />
               </a>
-              <a href="#" target="_blank">
+              <a
+                href="#"
+                target="_blank"
+              >
                 <FaSkype className="hover:text-[#FFA800] cursor-pointer" />
               </a>
-              <a href="https://twitter.com/1click_design" target="_blank">
+              <a
+                href="https://twitter.com/1click_design"
+                target="_blank"
+              >
                 <FaTwitter className="hover:text-[#FFA800] cursor-pointer" />
               </a>
             </div>
@@ -91,14 +97,12 @@ export function Footer() {
         </div>
       </div>
       <div className="flex gap-2 flex-col items-center lg:items-end justify-center w-full lg:w-4/12">
-        <img
+        <Image
           src="/1clickdesign-logo.svg"
           alt="logo"
           className="max-w-[60px] md:max-w-[200px]"
         />
-        <p className="text-[12px] md:text-[14px] text-center">
-          © 2024 1ClickDesign, LLC. All Rights Reserved.
-        </p>
+        <p className="text-[12px] md:text-[14px] text-center">© 2024 1ClickDesign, LLC. All Rights Reserved.</p>
       </div>
     </div>
   );

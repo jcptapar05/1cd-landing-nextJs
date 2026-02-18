@@ -1,16 +1,17 @@
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import React from "react";
 
 const VMC = () => {
   return (
     <div className="w-full h-screen relative">
-      <img
+      <Image
         src="./coming_soon.svg"
         alt="vmc"
         className="w-full h-full object-cover"
       />
       <div className="absolute top-[50%] w-full left-[50%] translate-x-[-50%] translate-y-[-50%] text-center px-4">
-        <img
+        <Image
           src="./vmc-logo.png"
           alt="vmc"
           className="w-full max-w-[100px] md:max-w-[177px] object-cover mx-auto"

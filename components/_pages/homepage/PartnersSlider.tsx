@@ -3,13 +3,7 @@
 import React from "react";
 
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
@@ -73,7 +67,7 @@ const PartnersSlider = () => {
               className="basis-1/2 md:basis-1/3 lg:basis-1/5"
             >
               <div className="flex justify-center items-center px-10">
-                <img
+                <Image
                   className="mx-auto w-full object-contain max-h-[120px]"
                   src={item.imgUrl}
                   alt={item.altTxt}

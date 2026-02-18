@@ -1,5 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import PhoneInput from "react-phone-number-input";
@@ -57,18 +59,20 @@ const RequestDemo = () => {
           </div>
         </div>
         <div className="flex lg:hidden items-center h-fit flex-col text-[#0E2D63] w-full">
-          <p className="uppercase text-[12px]  md:text-base m-0 font-extrabold tracking-widest">
-            Request a demo now
-          </p>
+          <p className="uppercase text-[12px]  md:text-base m-0 font-extrabold tracking-widest">Request a demo now</p>
           <div className="text-center ">
-            <p className="text-[24px] md:text-[38px]">
-              Ready to turn your Idea
-            </p>
+            <p className="text-[24px] md:text-[38px]">Ready to turn your Idea</p>
             <p className="text-[24px] md:text-[38px]">
               Into <i className="font-light">Virtual</i> Reality?
             </p>
           </div>
-          <img src="/arrow-down.png" className="py-4" />
+          <Image
+            alt="arrow-down"
+            width={100}
+            height={100}
+            src="/arrow-down.png"
+            className="py-4"
+          />
         </div>
       </div>
       <div className="w-full lg:w-1/2 flex flex-col justify-center items-center text-[#0E2D63]">
@@ -79,7 +83,10 @@ const RequestDemo = () => {
         >
           <div className="flex flex-col md:flex-row gap-10">
             <div className="flex flex-col w-full gap-3">
-              <label htmlFor="fname" className="md:text-base text-[12px]">
+              <label
+                htmlFor="fname"
+                className="md:text-base text-[12px]"
+              >
                 First Name
               </label>
               <input
@@ -91,7 +98,10 @@ const RequestDemo = () => {
               />
             </div>
             <div className="flex flex-col w-full gap-3">
-              <label htmlFor="email" className="md:text-base text-[12px]">
+              <label
+                htmlFor="email"
+                className="md:text-base text-[12px]"
+              >
                 Email
               </label>
               <input
@@ -106,7 +116,10 @@ const RequestDemo = () => {
           </div>
           <div className="flex flex-col md:flex-row gap-10">
             <div className="flex flex-col w-full gap-3">
-              <label htmlFor="company" className="md:text-base text-[12px]">
+              <label
+                htmlFor="company"
+                className="md:text-base text-[12px]"
+              >
                 Company
               </label>
               <input
@@ -119,7 +132,10 @@ const RequestDemo = () => {
               />
             </div>
             <div className="flex flex-col w-full gap-3 bg-r">
-              <label htmlFor="telnumber" className="md:text-base text-[12px]">
+              <label
+                htmlFor="telnumber"
+                className="md:text-base text-[12px]"
+              >
                 Tel #
               </label>
               <PhoneInput
@@ -133,7 +149,10 @@ const RequestDemo = () => {
             </div>
           </div>
           <div className="flex flex-col">
-            <label htmlFor="message" className="md:text-base text-[12px]">
+            <label
+              htmlFor="message"
+              className="md:text-base text-[12px]"
+            >
               Message
             </label>
             <textarea

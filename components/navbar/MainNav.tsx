@@ -14,6 +14,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import ContactUsDialog from "../_pages/contact_us/ContactUsDialog";
+import Image from "next/image";
 
 const components: { title: string; href: string }[] = [
   {
@@ -50,23 +51,22 @@ export function MainNav() {
   const pathname = usePathname();
 
   // Determine if the current route is privacy or terms page
-  const isPrivacyOrTermsPage =
-    pathname === "/privacy_and_policy" || pathname === "/terms_of_service";
+  const isPrivacyOrTermsPage = pathname === "/privacy_and_policy" || pathname === "/terms_of_service";
   return (
     <div
       className={`z-50 w-full transition-all bg-transparent justify-between px-12 hidden md:flex ${
         scrollOffset > 500 ? "py-3" : "py-3"
-      } ${
-        !isPrivacyOrTermsPage
-          ? "fixed text-[#CBCBCB] hover:bg-black hover:bg-opacity-30"
-          : "text-[#6C6966]"
-      }`}
+      } ${!isPrivacyOrTermsPage ? "fixed text-[#CBCBCB] hover:bg-black hover:bg-opacity-30" : "text-[#6C6966]"}`}
     >
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <Link href="/" legacyBehavior passHref>
-              <img
+            <Link
+              href="/"
+              legacyBehavior
+              passHref
+            >
+              <Image
                 src="/1clickdesign-logo-black.svg"
                 alt=""
                 className="cursor-pointer"
@@ -78,10 +78,12 @@ export function MainNav() {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <Link href="/services" legacyBehavior passHref>
-              <NavigationMenuLink
-                className={` text-[14px] font-extrabold tracking-wide uppercase`}
-              >
+            <Link
+              href="/services"
+              legacyBehavior
+              passHref
+            >
+              <NavigationMenuLink className={` text-[14px] font-extrabold tracking-wide uppercase`}>
                 Services
               </NavigationMenuLink>
             </Link>
@@ -104,12 +106,12 @@ export function MainNav() {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link href="/about" legacyBehavior passHref>
-              <NavigationMenuLink
-                className={` text-[14px] font-extrabold uppercase`}
-              >
-                About
-              </NavigationMenuLink>
+            <Link
+              href="/about"
+              legacyBehavior
+              passHref
+            >
+              <NavigationMenuLink className={` text-[14px] font-extrabold uppercase`}>About</NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
@@ -121,28 +123,25 @@ export function MainNav() {
   );
 }
 
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 p-5 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
-          )}
-          {...props}
-        >
-          <div className="text-sm font-bold leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
+const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a">>(
+  ({ className, title, children, ...props }, ref) => {
+    return (
+      <li>
+        <NavigationMenuLink asChild>
+          <a
+            ref={ref}
+            className={cn(
+              "block select-none space-y-1 p-5 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+              className,
+            )}
+            {...props}
+          >
+            <div className="text-sm font-bold leading-none">{title}</div>
+            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{children}</p>
+          </a>
+        </NavigationMenuLink>
+      </li>
+    );
+  },
+);
 ListItem.displayName = "ListItem";
