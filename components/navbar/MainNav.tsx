@@ -18,7 +18,7 @@ import Image from "next/image";
 
 const components: { title: string; href: string }[] = [
   {
-    title: "Virtual Showrooms",
+    title: "Virtual Showroomsssss",
     href: "/virtual_showroom",
   },
   {
@@ -84,7 +84,7 @@ export function MainNav() {
               passHref
             >
               <NavigationMenuLink className={` text-[14px] font-extrabold tracking-wide uppercase`}>
-                Services
+                Servicessssss
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
